@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-pro-errors": [
+        "dist/ngx-pro-errors/ngx-pro-errors",
+        "dist/ngx-pro-errors"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
