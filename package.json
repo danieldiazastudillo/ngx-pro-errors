@@ -1,6 +1,16 @@
 {
   "name": "ngx-pro-errors",
-  "version": "0.0.1",
+  "version": "9.0.3",
+  "description": "Angular validation module for reactive forms errors. Based and forked from UltimateAngular/ngx-errors",
+  "author": {
+    "name": "Daniel Diaz Astudillo",
+    "url": "https://www.github.com/danieldiazastudillo/ngx-pro-errors"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/danieldiazastudillo/ngx-pro-errors"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve ngx-pro-errors-showcase",
@@ -10,7 +20,7 @@
     "e2e": "ng e2e",
     "copy:readme": "copyfiles ./README.md ./projects/ngx-pro-errors",
     "build:lib": "npm run copy:readme && ng build ngx-pro-errors --prod",
-    "build:demo": "ng build ngx-pro-errors-showcase --prod",
+    "build:demo": "ng build ngx-pro-errors-showcase --prod --base-href=https://danieldiazastudillo.github.io/ngx-pro-errors/",
     "publish:demo": "npx angular-cli-ghpages --dir=./dist/ngx-pro-errors-showcase"
   },
   "private": true,
