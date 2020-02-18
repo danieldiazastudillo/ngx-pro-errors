@@ -68,6 +68,7 @@
               "projects/ngx-pro-errors-showcase/src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "projects/ngx-pro-errors-showcase/src/styles.scss"
             ],
             "scripts": []

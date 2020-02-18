@@ -3,23 +3,25 @@ import {
   Input,
   OnChanges,
   OnDestroy,
-  AfterViewInit
+  AfterViewInit,
+  OnInit
 } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { IErrorDetails, ErrorOptions } from './pro-errors';
-import { AbstractControl, FormGroupDirective } from '@angular/forms';
+import { AbstractControl, FormGroupDirective, ValidationErrors } from '@angular/forms';
 import { toArray } from './utils/toArray';
 
 @Directive({
-  selector: '[libNgxErrors]',
+  // tslint:disable-next-line: directive-selector
+  selector: '[ngxErrors]',
   exportAs: 'ngxErrors'
 })
-export class ProErrorsDirective implements OnChanges, OnDestroy, AfterViewInit {
+export class ProErrorsDirective implements OnInit, OnChanges, OnDestroy, AfterViewInit {
   // tslint:disable-next-line: no-input-rename
   @Input('ngxErrors') private readonly controlName: string;
 
-  subject$: BehaviorSubject<IErrorDetails>;
-  control: AbstractControl;
+  public subject$: BehaviorSubject<IErrorDetails>;
+  public control: AbstractControl;
   private ready = false;
 
   constructor(private form: FormGroupDirective) {}
@@ -73,17 +75,21 @@ export class ProErrorsDirective implements OnChanges, OnDestroy, AfterViewInit {
   }
 
   private checkStatus(): void {
-    const control = this.control;
-    const errors = control.errors;
+    const control: AbstractControl = this.control;
+    const errors: ValidationErrors = control.errors;
     this.ready = true;
 
     if (!errors) {
       return;
     }
 
-    errors.forEach((errorName: any) => {
+    Object.keys(errors).forEach((errorName: any) => {
       this.subject$.next({ control, errorName });
     });
+  }
+
+  ngOnInit() {
+    this.subject$ = new BehaviorSubject<IErrorDetails>(null);
   }
 
   ngOnChanges() {

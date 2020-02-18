@@ -1,0 +1,51 @@
+<form [formGroup]="testForm" (submit)="onSubmit()">
+  <div class="form-group">
+    <label>Email</label>
+    <input
+      type="email"
+      class="form-control"
+      placeholder="Your email address"
+      formControlName="email"
+      [class.is-valid]="email.valid"
+      [class.is-invalid]="email.invalid && email.touched"
+      autofocus
+    />
+
+    <div ngxErrors="email" class="invalid-feedback d-block">
+      <p
+        class="my-0"
+        *ngFor="let error of errors"
+        [ngxError]="error.name"
+        [when]="error.rules"
+      >
+        {{ error.text }}
+      </p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Name</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Your name"
+      formControlName="name"
+      [class.is-valid]="name.valid"
+      [class.is-invalid]="name.invalid && name.touched"
+    />
+
+    <div ngxErrors="name" class="invalid-feedback d-block">
+      <p
+        class="my-0"
+        *ngFor="let error of errors"
+        [ngxError]="error.name"
+        [when]="error.rules"
+      >
+        {{ error.text }}
+      </p>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-secondary btn-block my-5" [disabled]="testForm.invalid">SUBMIT</button>
+
+</form>

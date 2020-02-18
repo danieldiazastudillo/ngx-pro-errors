@@ -6,7 +6,8 @@ import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { ProErrorsDirective } from './pro-errors.directive';
 
 @Directive({
-  selector: '[libNgxError]'
+  // tslint:disable-next-line: directive-selector
+  selector: '[ngxError]'
 })
 export class ProErrorDirective implements OnInit, OnDestroy, DoCheck {
 
@@ -44,12 +45,11 @@ export class ProErrorDirective implements OnInit, OnDestroy, DoCheck {
       map(states => this.rules.every(rule => !!~states.indexOf(rule)))
     );
 
-    this.subscription = combineLatest([states, errors]).subscribe(
-      // tslint:disable-next-line: no-shadowed-variable
-      ([states, errors]) => {
-        this.hidden = !(states && errors.control.hasError(errors.errorName));
+    this.subscription = combineLatest([states, errors]).subscribe({
+      next: ([statesComb, errorsComb]) => {
+        return this.hidden = !(statesComb && errorsComb.control.hasError(errorsComb.errorName));
       }
-    );
+    });
   }
 
   ngDoCheck() {
