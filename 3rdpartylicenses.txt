@@ -88,6 +88,7 @@ THE SOFTWARE.
 
 
 ngx-pro-errors
+MIT
 
 regenerator-runtime
 MIT
