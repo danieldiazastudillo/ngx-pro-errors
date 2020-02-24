@@ -1,5 +1,3 @@
-[![npm][npm-badge]][npm-badge-url]
-
 <h1 align="center">
 <img width="40" valign="bottom" src="https://angular.io/assets/images/logos/angular/angular.svg">
 ngx-pro-errors
@@ -101,7 +99,7 @@ For more detailed documentation go to the [original docs](https://github.com/hac
 ### Installation
 
 ```bash
-npm install --save ngx-pro-errors
+npm install --save ngx-pro-errors@latest
 ```
 
 ### Setup
@@ -401,5 +399,4 @@ The `errors` property returns the object associated with any active errors. This
 
 > The errors returned are identical to Angular's FormControl API
 
-[npm-badge]: https://img.shields.io/npm/v/@hackages/ngxerrors.svg
-[npm-badge-url]: https://www.npmjs.com/package/@prosmartxyz/ngx-pro-errors
+[npm-badge-url]: https://www.npmjs.com/package/ngx-pro-errors
