@@ -1,5 +1,3 @@
-[![npm][npm-badge]][npm-badge-url]
-
 <h1 align="center">
 <img width="40" valign="bottom" src="https://angular.io/assets/images/logos/angular/angular.svg">
 ngx-pro-errors
