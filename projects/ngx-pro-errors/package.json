@@ -12,7 +12,6 @@
     "url": "https://www.github.com/danieldiazastudillo/ngx-pro-errors"
   },
   "peerDependencies": {
-    "@angular/common": "~10.1.0",
     "@angular/core": "~10.1.0"
 },
   "dependencies": {
