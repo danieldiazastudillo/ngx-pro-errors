@@ -1,6 +1,6 @@
 {
   "name": "ngx-pro-errors",
-  "version": "10.1.0",
+  "version": "10.2.0",
   "description": "Angular validation module for reactive forms errors. Based and forked from UltimateAngular/ngx-errors",
   "author": {
     "name": "Daniel Diaz Astudillo",
@@ -12,7 +12,7 @@
     "url": "https://www.github.com/danieldiazastudillo/ngx-pro-errors"
   },
   "peerDependencies": {
-    "@angular/core": "~10.1.0"
+    "@angular/core": "~10.2.0"
 },
   "dependencies": {
     "tslib": "^2.0.1"
